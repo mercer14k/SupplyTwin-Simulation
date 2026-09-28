@@ -1,0 +1,11 @@
+fastapi<1,>=0.115
+uvicorn<1,>=0.34
+pydantic<3,>=2.10
+numpy<3,>=2.2
+httpx<1,>=0.28
+
+[dev]
+pytest<10,>=8
+pytest-cov<8,>=6
+ruff<1,>=0.11
+pip-audit<3,>=2.9
