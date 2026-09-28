@@ -1,0 +1,16 @@
+flowchart LR
+  web["React + Three.js workspace"]
+  api["FastAPI v1 / validation / authorization"]
+  domain["Typed domain + deterministic NumPy engine"]
+  db["SQLite / immutable networks and runs"]
+  ai["Schema and evidence gate"]
+  ollama["Optional local Ollama model"]
+  eval["Conservation and replay evaluation"]
+  web -->|Typed REST| api
+  api --> domain
+  api --> db
+  api -->|Proposals and evidence only| ai
+  ai --> ollama
+  domain --> eval
+  domain -->|Through application service| db
+%% portable-canonical-v2:eyJhY2Nlc3NpYmlsaXR5IjpudWxsLCJkYXRhIjp7ImRpcmVjdGlvbiI6IkxSIiwiZWRnZXMiOlt7ImZyb20iOiJ3ZWIiLCJsYWJlbCI6IlR5cGVkIFJFU1QiLCJ0byI6ImFwaSJ9LHsiZnJvbSI6ImFwaSIsInRvIjoiZG9tYWluIn0seyJmcm9tIjoiYXBpIiwidG8iOiJkYiJ9LHsiZnJvbSI6ImFwaSIsImxhYmVsIjoiUHJvcG9zYWxzIGFuZCBldmlkZW5jZSBvbmx5IiwidG8iOiJhaSJ9LHsiZnJvbSI6ImFpIiwidG8iOiJvbGxhbWEifSx7ImZyb20iOiJkb21haW4iLCJ0byI6ImV2YWwifSx7ImZyb20iOiJkb21haW4iLCJsYWJlbCI6IlRocm91Z2ggYXBwbGljYXRpb24gc2VydmljZSIsInRvIjoiZGIifV0sIm5vZGVzIjpbeyJpZCI6IndlYiIsImxhYmVsIjoiUmVhY3QgKyBUaHJlZS5qcyB3b3Jrc3BhY2UifSx7ImlkIjoiYXBpIiwibGFiZWwiOiJGYXN0QVBJIHYxIC8gdmFsaWRhdGlvbiAvIGF1dGhvcml6YXRpb24ifSx7ImlkIjoiZG9tYWluIiwibGFiZWwiOiJUeXBlZCBkb21haW4gKyBkZXRlcm1pbmlzdGljIE51bVB5IGVuZ2luZSJ9LHsiaWQiOiJkYiIsImxhYmVsIjoiU1FMaXRlIC8gaW1tdXRhYmxlIG5ldHdvcmtzIGFuZCBydW5zIn0seyJpZCI6ImFpIiwibGFiZWwiOiJTY2hlbWEgYW5kIGV2aWRlbmNlIGdhdGUifSx7ImlkIjoib2xsYW1hIiwibGFiZWwiOiJPcHRpb25hbCBsb2NhbCBPbGxhbWEgbW9kZWwifSx7ImlkIjoiZXZhbCIsImxhYmVsIjoiQ29uc2VydmF0aW9uIGFuZCByZXBsYXkgZXZhbHVhdGlvbiJ9XX0sImRlc2NyaXB0aW9uIjpudWxsLCJpZCI6ImFyY2hpdGVjdHVyZSIsImtpbmQiOiJmbG93Y2hhcnQiLCJzb3VyY2VTaGEyNTYiOiIzNWUxMDJjZTBmOTFkMGM2ZTM2ZTk4MTUyMTc1NmI2ZWU5NzU1ZGEwMzgwMmQxODBlNDE3NjA0MWYzOTlmYWQ5Iiwic3R5bGVzIjpbXSwidGl0bGUiOiJMb2NhbCBleGVjdXRpb24gYW5kIHRydXN0IGJvdW5kYXJpZXMiLCJ2ZXJzaW9uIjoxfQ

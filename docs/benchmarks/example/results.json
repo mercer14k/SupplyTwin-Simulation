@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-27T20:46:51.308749+00:00",
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "logical_cpus": 10,
+    "python": "3.12.14",
+    "engine": "1.0.0",
+    "numpy": "2.5.3",
+    "model": "disabled",
+    "seed": 42,
+    "generator_seed": 17,
+    "repeats": 3,
+    "protocol": "Timing excludes generation, HTTP and serialization. Python allocation peak is a separate traced run; it is not process RSS.",
+    "hardware": "Apple M5",
+    "physical_memory_bytes": 17179869184
+  },
+  "measurements": [
+    {
+      "scale": 1,
+      "nodes": 41,
+      "lanes": 48,
+      "skus": 60,
+      "demand_records": 1800,
+      "horizon": 60,
+      "median_seconds": 0.031159833015408367,
+      "min_seconds": 0.029790624976158142,
+      "max_seconds": 0.035030500032007694,
+      "python_peak_mib": 3.0482234954833984,
+      "reproducible": true,
+      "conservation_passed": true,
+      "max_mass_error": 4.3655745685100555e-11,
+      "result_hash": "0e5f38a27097011bfc6178f48214f2b43ee644534cbf5acd5795183ea788f79e"
+    },
+    {
+      "scale": 2,
+      "nodes": 71,
+      "lanes": 78,
+      "skus": 120,
+      "demand_records": 7200,
+      "horizon": 60,
+      "median_seconds": 0.0620379580068402,
+      "min_seconds": 0.06135037500644103,
+      "max_seconds": 0.06216741702519357,
+      "python_peak_mib": 9.38300895690918,
+      "reproducible": true,
+      "conservation_passed": true,
+      "max_mass_error": 1.1641532182693481e-10,
+      "result_hash": "b9c8b4177d45108f59695cc66d663482f9817fe30819d7207a5fdcd83759bc9c"
+    },
+    {
+      "scale": 4,
+      "nodes": 131,
+      "lanes": 138,
+      "skus": 240,
+      "demand_records": 28800,
+      "horizon": 60,
+      "median_seconds": 0.16043604095466435,
+      "min_seconds": 0.15993216604692861,
+      "max_seconds": 0.16195116704329848,
+      "python_peak_mib": 33.53402137756348,
+      "reproducible": true,
+      "conservation_passed": true,
+      "max_mass_error": 1.1641532182693481e-09,
+      "result_hash": "672aa4ae32824cd6a5609560bd1c9ed970dc02fbf6936621b5624a2a684c1c73"
+    }
+  ],
+  "ai_evaluation": {
+    "mode": "deterministic",
+    "model": "disabled",
+    "claims": 3,
+    "evidence_faithfulness": 1.0,
+    "missing_evidence_abstains": true,
+    "telemetry": {
+      "episode_id": "a60ac1cc-bdf6-4dff-8af7-7928f540545a",
+      "runtime": "disabled",
+      "model": null,
+      "prompt_version": "1.0.0",
+      "source_ids": [
+        "unsaved"
+      ],
+      "tool_calls": [],
+      "retries": 0,
+      "validation_failures": [],
+      "config": {
+        "temperature": 0,
+        "seed": 42
+      },
+      "tokens": null,
+      "latency_ms": 0
+    },
+    "limitation": "Measures supported evidence and numeric/directional fidelity of constrained claims, not natural-language semantic quality."
+  },
+  "comparison_kpis": {
+    "baseline": {
+      "fill_rate": 0.9995629053716449,
+      "service": 0.9831085359675785,
+      "backlog": 0.0,
+      "inventory": 37705.7781,
+      "average_inventory": 33665.47408601035,
+      "utilization": 0.6995819714035088,
+      "stockouts": 102,
+      "total_cost": 4430881.837488217,
+      "demand": 126336.0,
+      "dispatched": 126336.0,
+      "delivered": 124202.0,
+      "in_transit": 17993.75
+    },
+    "scenario": {
+      "fill_rate": 0.9437168359688497,
+      "service": 0.9831085359675784,
+      "backlog": 0.0,
+      "inventory": 34079.27816215818,
+      "average_inventory": 28187.5169867581,
+      "utilization": 0.7367487198181378,
+      "stockouts": 2050,
+      "total_cost": 4385203.067728183,
+      "demand": 126336.0,
+      "dispatched": 126335.99999999999,
+      "delivered": 124201.99999999999,
+      "in_transit": 19229.3375
+    },
+    "deltas": {
+      "fill_rate": -0.05584606940279524,
+      "service": -1.1102230246251565e-16,
+      "backlog": 0.0,
+      "inventory": -3626.4999378418215,
+      "average_inventory": -5477.9570992522495,
+      "utilization": 0.03716674841462908,
+      "stockouts": 1948,
+      "total_cost": -45678.76976003405,
+      "demand": 0.0,
+      "dispatched": -1.4551915228366852e-11,
+      "delivered": -1.4551915228366852e-11,
+      "in_transit": 1235.5875000000015
+    }
+  }
+}

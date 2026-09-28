@@ -1,0 +1,2 @@
+scale,nodes,lanes,skus,demand_records,horizon,median_seconds,min_seconds,max_seconds,python_peak_mib,reproducible,conservation_passed,max_mass_error,result_hash
+1,41,48,60,1800,60,0.03256381250685081,0.03026958298869431,0.03485804202500731,3.0482234954833984,True,True,4.3655745685100555e-11,0e5f38a27097011bfc6178f48214f2b43ee644534cbf5acd5795183ea788f79e

@@ -1,0 +1,160 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "maxLength": 1000,
+      "title": "Description",
+      "type": "string"
+    },
+    "horizon": {
+      "default": 60,
+      "maximum": 365,
+      "minimum": 2,
+      "title": "Horizon",
+      "type": "integer"
+    },
+    "seed": {
+      "default": 42,
+      "maximum": 2147483647,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "start_day": {
+      "default": 10,
+      "maximum": 364,
+      "minimum": 0,
+      "title": "Start Day",
+      "type": "integer"
+    },
+    "end_day": {
+      "default": 35,
+      "maximum": 365,
+      "minimum": 1,
+      "title": "End Day",
+      "type": "integer"
+    },
+    "demand_multiplier": {
+      "default": 1,
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Demand Multiplier",
+      "type": "number"
+    },
+    "capacity_multipliers": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$": {
+          "maximum": 3,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "title": "Capacity Multipliers",
+      "type": "object"
+    },
+    "lane_capacity_multipliers": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$": {
+          "maximum": 3,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "title": "Lane Capacity Multipliers",
+      "type": "object"
+    },
+    "lead_time_overrides": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$": {
+          "maximum": 90,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "title": "Lead Time Overrides",
+      "type": "object"
+    },
+    "sourcing_weights": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "title": "Sourcing Weights",
+      "type": "object"
+    },
+    "safety_stock_multiplier": {
+      "default": 1,
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Safety Stock Multiplier",
+      "type": "number"
+    },
+    "id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "ingested_at": {
+      "format": "date-time",
+      "title": "Ingested At",
+      "type": "string"
+    },
+    "validation_status": {
+      "default": "valid",
+      "enum": [
+        "valid",
+        "warning"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "lineage": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Lineage",
+      "type": "object"
+    },
+    "version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "parent_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Id"
+    }
+  },
+  "required": [
+    "name",
+    "id",
+    "source_id"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

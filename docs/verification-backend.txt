@@ -1,0 +1,22 @@
+.....................................                                    [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  <workspace>/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.12.14-final-0 _______________
+
+Name                              Stmts   Miss  Cover   Missing
+---------------------------------------------------------------
+apps/api/main.py                    169      6    96%   111, 115-118, 140, 170, 215
+packages/supplytwin/__init__.py       1      0   100%
+packages/supplytwin/ai.py            89      7    92%   29, 32-46, 162
+packages/supplytwin/data.py          66     10    85%   17, 219, 230-239
+packages/supplytwin/domain.py       134     10    93%   81, 88, 94, 98, 105, 108, 145, 148, 152, 154
+packages/supplytwin/engine.py       146      2    99%   189, 191
+packages/supplytwin/store.py        102      5    95%   71-72, 82, 96, 107
+---------------------------------------------------------------
+TOTAL                               707     40    94%
+37 passed, 1 warning in 4.60s

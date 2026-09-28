@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-27T21:00:30.719853+00:00",
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "logical_cpus": 10,
+    "python": "3.12.14",
+    "engine": "1.0.0",
+    "numpy": "2.5.3",
+    "model": "qwen3:8b",
+    "seed": 42,
+    "generator_seed": 17,
+    "repeats": 2,
+    "protocol": "Timing excludes generation, HTTP and serialization. Python allocation peak is a separate traced run; it is not process RSS.",
+    "hardware": "Apple M5",
+    "physical_memory_bytes": 17179869184,
+    "ollama_version": {
+      "version": "0.34.4"
+    },
+    "model_artifact": {
+      "name": "qwen3:8b",
+      "model": "qwen3:8b",
+      "modified_at": "2026-09-16T20:57:05.729716781-05:00",
+      "size": 5225388164,
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 40960,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "scale": 1,
+      "nodes": 41,
+      "lanes": 48,
+      "skus": 60,
+      "demand_records": 1800,
+      "horizon": 60,
+      "median_seconds": 0.03256381250685081,
+      "min_seconds": 0.03026958298869431,
+      "max_seconds": 0.03485804202500731,
+      "python_peak_mib": 3.0482234954833984,
+      "reproducible": true,
+      "conservation_passed": true,
+      "max_mass_error": 4.3655745685100555e-11,
+      "result_hash": "0e5f38a27097011bfc6178f48214f2b43ee644534cbf5acd5795183ea788f79e"
+    }
+  ],
+  "ai_evaluation": {
+    "mode": "local-ai-selection",
+    "model": "qwen3:8b",
+    "claims": 6,
+    "evidence_faithfulness": 1.0,
+    "missing_evidence_abstains": true,
+    "telemetry": {
+      "episode_id": "557622f2-743b-412e-99fb-43ed7df6119f",
+      "runtime": "OllamaRuntime",
+      "model": "qwen3:8b",
+      "prompt_version": "1.1.0",
+      "source_ids": [
+        "unsaved"
+      ],
+      "tool_calls": [],
+      "retries": 0,
+      "validation_failures": [],
+      "config": {
+        "temperature": 0,
+        "seed": 42
+      },
+      "tokens": 170,
+      "latency_ms": 10197.45
+    },
+    "limitation": "Measures supported evidence and numeric/directional fidelity of constrained claims, not natural-language semantic quality.",
+    "proposal": {
+      "status": "proposed",
+      "correct": true,
+      "telemetry": {
+        "episode_id": "41fe80e5-8f7c-4573-9d6b-2c07ac97110e",
+        "runtime": "OllamaRuntime",
+        "model": "qwen3:8b",
+        "prompt_version": "1.1.0",
+        "source_ids": [
+          "global-demo-v1"
+        ],
+        "tool_calls": [],
+        "retries": 0,
+        "validation_failures": [],
+        "config": {
+          "temperature": 0,
+          "seed": 42
+        },
+        "tokens": 154,
+        "latency_ms": 11775.61
+      }
+    }
+  },
+  "comparison_kpis": {
+    "baseline": {
+      "fill_rate": 0.9995629053716449,
+      "service": 0.9831085359675785,
+      "backlog": 0.0,
+      "inventory": 37705.7781,
+      "average_inventory": 33665.47408601035,
+      "utilization": 0.6995819714035088,
+      "stockouts": 102,
+      "total_cost": 4430881.837488217,
+      "demand": 126336.0,
+      "dispatched": 126336.0,
+      "delivered": 124202.0,
+      "in_transit": 17993.75
+    },
+    "scenario": {
+      "fill_rate": 0.9437168359688497,
+      "service": 0.9831085359675784,
+      "backlog": 0.0,
+      "inventory": 34079.27816215818,
+      "average_inventory": 28187.5169867581,
+      "utilization": 0.7367487198181378,
+      "stockouts": 2050,
+      "total_cost": 4385203.067728183,
+      "demand": 126336.0,
+      "dispatched": 126335.99999999999,
+      "delivered": 124201.99999999999,
+      "in_transit": 19229.3375
+    },
+    "deltas": {
+      "fill_rate": -0.05584606940279524,
+      "service": -1.1102230246251565e-16,
+      "backlog": 0.0,
+      "inventory": -3626.4999378418215,
+      "average_inventory": -5477.9570992522495,
+      "utilization": 0.03716674841462908,
+      "stockouts": 1948,
+      "total_cost": -45678.76976003405,
+      "demand": 0.0,
+      "dispatched": -1.4551915228366852e-11,
+      "delivered": -1.4551915228366852e-11,
+      "in_transit": 1235.5875000000015
+    }
+  }
+}

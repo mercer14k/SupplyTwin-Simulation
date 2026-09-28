@@ -1,0 +1,397 @@
+{
+  "$defs": {
+    "Demand": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "ingested_at": {
+          "format": "date-time",
+          "title": "Ingested At",
+          "type": "string"
+        },
+        "validation_status": {
+          "default": "valid",
+          "enum": [
+            "valid",
+            "warning"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "lineage": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "object"
+        },
+        "customer": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Customer",
+          "type": "string"
+        },
+        "sku": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Sku",
+          "type": "string"
+        },
+        "daily_mean": {
+          "minimum": 0,
+          "title": "Daily Mean",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "customer",
+        "sku",
+        "daily_mean"
+      ],
+      "title": "Demand",
+      "type": "object"
+    },
+    "Lane": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "ingested_at": {
+          "format": "date-time",
+          "title": "Ingested At",
+          "type": "string"
+        },
+        "validation_status": {
+          "default": "valid",
+          "enum": [
+            "valid",
+            "warning"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "lineage": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "object"
+        },
+        "source": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target",
+          "type": "string"
+        },
+        "lead_time": {
+          "maximum": 60,
+          "minimum": 1,
+          "title": "Lead Time",
+          "type": "integer"
+        },
+        "capacity": {
+          "minimum": 0,
+          "title": "Capacity",
+          "type": "number"
+        },
+        "unit_cost": {
+          "minimum": 0,
+          "title": "Unit Cost",
+          "type": "number"
+        },
+        "allocation": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Allocation",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "source",
+        "target",
+        "lead_time",
+        "capacity",
+        "unit_cost",
+        "allocation"
+      ],
+      "title": "Lane",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "ingested_at": {
+          "format": "date-time",
+          "title": "Ingested At",
+          "type": "string"
+        },
+        "validation_status": {
+          "default": "valid",
+          "enum": [
+            "valid",
+            "warning"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "lineage": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "object"
+        },
+        "name": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "supplier",
+            "plant",
+            "dc",
+            "customer"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "latitude": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitude",
+          "type": "number"
+        },
+        "capacity": {
+          "minimum": 0,
+          "title": "Capacity",
+          "type": "number"
+        },
+        "coverage_days": {
+          "maximum": 90,
+          "minimum": 0,
+          "title": "Coverage Days",
+          "type": "number"
+        },
+        "safety_days": {
+          "maximum": 60,
+          "minimum": 0,
+          "title": "Safety Days",
+          "type": "number"
+        },
+        "initial_days": {
+          "maximum": 90,
+          "minimum": 0,
+          "title": "Initial Days",
+          "type": "number"
+        },
+        "process_cost": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Process Cost",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "name",
+        "kind",
+        "latitude",
+        "longitude",
+        "capacity",
+        "coverage_days",
+        "safety_days",
+        "initial_days"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "SKU": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "ingested_at": {
+          "format": "date-time",
+          "title": "Ingested At",
+          "type": "string"
+        },
+        "validation_status": {
+          "default": "valid",
+          "enum": [
+            "valid",
+            "warning"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "lineage": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "object"
+        },
+        "name": {
+          "maxLength": 100,
+          "title": "Name",
+          "type": "string"
+        },
+        "unit_cost": {
+          "minimum": 0,
+          "title": "Unit Cost",
+          "type": "number"
+        },
+        "holding_cost": {
+          "minimum": 0,
+          "title": "Holding Cost",
+          "type": "number"
+        },
+        "backlog_cost": {
+          "minimum": 0,
+          "title": "Backlog Cost",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "name",
+        "unit_cost",
+        "holding_cost",
+        "backlog_cost"
+      ],
+      "title": "SKU",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "ingested_at": {
+      "format": "date-time",
+      "title": "Ingested At",
+      "type": "string"
+    },
+    "validation_status": {
+      "default": "valid",
+      "enum": [
+        "valid",
+        "warning"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "lineage": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Lineage",
+      "type": "object"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "maxItems": 2000,
+      "minItems": 4,
+      "title": "Nodes",
+      "type": "array"
+    },
+    "skus": {
+      "items": {
+        "$ref": "#/$defs/SKU"
+      },
+      "maxItems": 1000,
+      "minItems": 1,
+      "title": "Skus",
+      "type": "array"
+    },
+    "lanes": {
+      "items": {
+        "$ref": "#/$defs/Lane"
+      },
+      "maxItems": 10000,
+      "minItems": 3,
+      "title": "Lanes",
+      "type": "array"
+    },
+    "demand": {
+      "items": {
+        "$ref": "#/$defs/Demand"
+      },
+      "maxItems": 100000,
+      "minItems": 1,
+      "title": "Demand",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "source_id",
+    "nodes",
+    "skus",
+    "lanes",
+    "demand"
+  ],
+  "title": "Network",
+  "type": "object"
+}
